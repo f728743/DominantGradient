@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "radio_18_90s_rock.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

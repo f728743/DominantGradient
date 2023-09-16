@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "radio_02_pop.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

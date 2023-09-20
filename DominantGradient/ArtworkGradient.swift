@@ -28,6 +28,7 @@ struct ArtworkGradient: View {
         }
         .background {
             ColorfulBackground(colors: vm.colors.map { .init(uiColor: $0.color) })
+                .overlay(VisualEffect(style: .dark, intensity: 0.6))
                 .ignoresSafeArea()
         }
     }
@@ -38,9 +39,10 @@ private extension ArtworkGradient {
         Image(vm.currentImage)
             .resizable()
             .aspectRatio(contentMode: .fit)
+            .cornerRadius(10)
             .background {
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(.white)
+                Color.white.opacity(0.5)
+                    .cornerRadius(10)
                     .shadow(radius: 10)
             }
             .padding(40)
@@ -79,7 +81,7 @@ private extension ArtworkGradient {
                 label: { Image(systemName: "forward.fill") }
             )
         }
-        .foregroundColor(.primary)
+        .foregroundColor(.white)
         .font(.system(size: 40))
     }
 }

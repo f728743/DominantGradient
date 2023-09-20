@@ -17,6 +17,7 @@
 		AD288ADE2ABB193C00167FB5 /* ColorStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD288ADB2ABB193C00167FB5 /* ColorStop.swift */; };
 		AD288ADF2ABB193C00167FB5 /* Uniforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD288ADC2ABB193C00167FB5 /* Uniforms.swift */; };
 		AD288AE12ABB1AE000167FB5 /* ColorfulBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD288AE02ABB1AE000167FB5 /* ColorfulBackground.swift */; };
+		AD288AE32ABB3D5200167FB5 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD288AE22ABB3D5200167FB5 /* BlurView.swift */; };
 		AD60AF3C2ABACDAD00FC1B98 /* Lab+ColorDifference.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AF3B2ABACDAD00FC1B98 /* Lab+ColorDifference.swift */; };
 		AD8D5EFD2AB2D91C0008F94D /* DominantGradientApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8D5EFC2AB2D91C0008F94D /* DominantGradientApp.swift */; };
 		AD8D5EFF2AB2D91C0008F94D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8D5EFE2AB2D91C0008F94D /* ContentView.swift */; };
@@ -51,6 +52,7 @@
 		AD288ADB2ABB193C00167FB5 /* ColorStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorStop.swift; sourceTree = "<group>"; };
 		AD288ADC2ABB193C00167FB5 /* Uniforms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uniforms.swift; sourceTree = "<group>"; };
 		AD288AE02ABB1AE000167FB5 /* ColorfulBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulBackground.swift; sourceTree = "<group>"; };
+		AD288AE22ABB3D5200167FB5 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		AD60AF3B2ABACDAD00FC1B98 /* Lab+ColorDifference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lab+ColorDifference.swift"; sourceTree = "<group>"; };
 		AD8D5EF92AB2D91C0008F94D /* DominantGradient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DominantGradient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD8D5EFC2AB2D91C0008F94D /* DominantGradientApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DominantGradientApp.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				AD288ACF2ABB181100167FB5 /* AnimatedGradient */,
 				AD0EAA782AB4D447006D7F53 /* DominantColors */,
 				AD8D5F0A2AB2DC870008F94D /* ArtworkGradient.swift */,
+				AD288AE22ABB3D5200167FB5 /* BlurView.swift */,
 				AD8D5F0C2AB2DD7A0008F94D /* ArtworkGradientViewModel.swift */,
 				AD288AE02ABB1AE000167FB5 /* ColorfulBackground.swift */,
 				AD8D5EFE2AB2D91C0008F94D /* ContentView.swift */,
@@ -311,6 +314,7 @@
 				AD288AD22ABB187A00167FB5 /* MulticolorGradientShader.metal in Sources */,
 				AD288ADD2ABB193C00167FB5 /* GradientParams.swift in Sources */,
 				ADC266E02ABA182700BCFAD6 /* UIColor+Extensions.swift in Sources */,
+				AD288AE32ABB3D5200167FB5 /* BlurView.swift in Sources */,
 				AD288ADE2ABB193C00167FB5 /* ColorStop.swift in Sources */,
 				AD0EAA8D2AB4D6E1006D7F53 /* XYZ.swift in Sources */,
 				ADCA06602AB82DBA0042A1D4 /* UIImage+Extensions.swift in Sources */,

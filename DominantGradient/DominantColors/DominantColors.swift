@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct ColorFrequency {
+struct ColorFrequency: Hashable {
     let color: UIColor
     let frequency: Double
 }

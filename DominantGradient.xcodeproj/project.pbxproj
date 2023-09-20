@@ -10,6 +10,13 @@
 		AD0EAA7A2AB4D45D006D7F53 /* DominantColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0EAA792AB4D45D006D7F53 /* DominantColors.swift */; };
 		AD0EAA8B2AB4D6BC006D7F53 /* Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0EAA8A2AB4D6BC006D7F53 /* Lab.swift */; };
 		AD0EAA8D2AB4D6E1006D7F53 /* XYZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0EAA8C2AB4D6E1006D7F53 /* XYZ.swift */; };
+		AD288AD22ABB187A00167FB5 /* MulticolorGradientShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = AD288AD12ABB187A00167FB5 /* MulticolorGradientShader.metal */; };
+		AD288AD52ABB18BE00167FB5 /* MulticolorGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD288AD32ABB18BE00167FB5 /* MulticolorGradientView.swift */; };
+		AD288AD62ABB18BE00167FB5 /* MulticolorGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD288AD42ABB18BE00167FB5 /* MulticolorGradient.swift */; };
+		AD288ADD2ABB193C00167FB5 /* GradientParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD288ADA2ABB193C00167FB5 /* GradientParams.swift */; };
+		AD288ADE2ABB193C00167FB5 /* ColorStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD288ADB2ABB193C00167FB5 /* ColorStop.swift */; };
+		AD288ADF2ABB193C00167FB5 /* Uniforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD288ADC2ABB193C00167FB5 /* Uniforms.swift */; };
+		AD288AE12ABB1AE000167FB5 /* ColorfulBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD288AE02ABB1AE000167FB5 /* ColorfulBackground.swift */; };
 		AD60AF3C2ABACDAD00FC1B98 /* Lab+ColorDifference.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AF3B2ABACDAD00FC1B98 /* Lab+ColorDifference.swift */; };
 		AD8D5EFD2AB2D91C0008F94D /* DominantGradientApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8D5EFC2AB2D91C0008F94D /* DominantGradientApp.swift */; };
 		AD8D5EFF2AB2D91C0008F94D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8D5EFE2AB2D91C0008F94D /* ContentView.swift */; };
@@ -37,6 +44,13 @@
 		AD0EAA792AB4D45D006D7F53 /* DominantColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DominantColors.swift; sourceTree = "<group>"; };
 		AD0EAA8A2AB4D6BC006D7F53 /* Lab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lab.swift; sourceTree = "<group>"; };
 		AD0EAA8C2AB4D6E1006D7F53 /* XYZ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYZ.swift; sourceTree = "<group>"; };
+		AD288AD12ABB187A00167FB5 /* MulticolorGradientShader.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MulticolorGradientShader.metal; sourceTree = "<group>"; };
+		AD288AD32ABB18BE00167FB5 /* MulticolorGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticolorGradientView.swift; sourceTree = "<group>"; };
+		AD288AD42ABB18BE00167FB5 /* MulticolorGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticolorGradient.swift; sourceTree = "<group>"; };
+		AD288ADA2ABB193C00167FB5 /* GradientParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientParams.swift; sourceTree = "<group>"; };
+		AD288ADB2ABB193C00167FB5 /* ColorStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorStop.swift; sourceTree = "<group>"; };
+		AD288ADC2ABB193C00167FB5 /* Uniforms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uniforms.swift; sourceTree = "<group>"; };
+		AD288AE02ABB1AE000167FB5 /* ColorfulBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulBackground.swift; sourceTree = "<group>"; };
 		AD60AF3B2ABACDAD00FC1B98 /* Lab+ColorDifference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lab+ColorDifference.swift"; sourceTree = "<group>"; };
 		AD8D5EF92AB2D91C0008F94D /* DominantGradient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DominantGradient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD8D5EFC2AB2D91C0008F94D /* DominantGradientApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DominantGradientApp.swift; sourceTree = "<group>"; };
@@ -90,6 +104,35 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		AD288ACF2ABB181100167FB5 /* AnimatedGradient */ = {
+			isa = PBXGroup;
+			children = (
+				AD288AD92ABB190C00167FB5 /* Model */,
+				AD288AD02ABB183A00167FB5 /* Shaders */,
+				AD288AD42ABB18BE00167FB5 /* MulticolorGradient.swift */,
+				AD288AD32ABB18BE00167FB5 /* MulticolorGradientView.swift */,
+			);
+			path = AnimatedGradient;
+			sourceTree = "<group>";
+		};
+		AD288AD02ABB183A00167FB5 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				AD288AD12ABB187A00167FB5 /* MulticolorGradientShader.metal */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		AD288AD92ABB190C00167FB5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AD288ADB2ABB193C00167FB5 /* ColorStop.swift */,
+				AD288ADA2ABB193C00167FB5 /* GradientParams.swift */,
+				AD288ADC2ABB193C00167FB5 /* Uniforms.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AD8D5EF02AB2D91C0008F94D = {
 			isa = PBXGroup;
 			children = (
@@ -111,11 +154,13 @@
 		AD8D5EFB2AB2D91C0008F94D /* DominantGradient */ = {
 			isa = PBXGroup;
 			children = (
+				AD288ACF2ABB181100167FB5 /* AnimatedGradient */,
 				AD0EAA782AB4D447006D7F53 /* DominantColors */,
-				AD8D5EFC2AB2D91C0008F94D /* DominantGradientApp.swift */,
-				AD8D5EFE2AB2D91C0008F94D /* ContentView.swift */,
 				AD8D5F0A2AB2DC870008F94D /* ArtworkGradient.swift */,
 				AD8D5F0C2AB2DD7A0008F94D /* ArtworkGradientViewModel.swift */,
+				AD288AE02ABB1AE000167FB5 /* ColorfulBackground.swift */,
+				AD8D5EFE2AB2D91C0008F94D /* ContentView.swift */,
+				AD8D5EFC2AB2D91C0008F94D /* DominantGradientApp.swift */,
 				AD8D5F002AB2D91D0008F94D /* Assets.xcassets */,
 				AD8D5F022AB2D91D0008F94D /* Preview Content */,
 			);
@@ -262,12 +307,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD8D5F0B2AB2DC870008F94D /* ArtworkGradient.swift in Sources */,
+				AD288AD62ABB18BE00167FB5 /* MulticolorGradient.swift in Sources */,
+				AD288AD22ABB187A00167FB5 /* MulticolorGradientShader.metal in Sources */,
+				AD288ADD2ABB193C00167FB5 /* GradientParams.swift in Sources */,
 				ADC266E02ABA182700BCFAD6 /* UIColor+Extensions.swift in Sources */,
+				AD288ADE2ABB193C00167FB5 /* ColorStop.swift in Sources */,
 				AD0EAA8D2AB4D6E1006D7F53 /* XYZ.swift in Sources */,
 				ADCA06602AB82DBA0042A1D4 /* UIImage+Extensions.swift in Sources */,
 				AD0EAA8B2AB4D6BC006D7F53 /* Lab.swift in Sources */,
+				AD288AD52ABB18BE00167FB5 /* MulticolorGradientView.swift in Sources */,
 				AD8D5F0D2AB2DD7A0008F94D /* ArtworkGradientViewModel.swift in Sources */,
+				AD288AE12ABB1AE000167FB5 /* ColorfulBackground.swift in Sources */,
 				AD8D5EFF2AB2D91C0008F94D /* ContentView.swift in Sources */,
+				AD288ADF2ABB193C00167FB5 /* Uniforms.swift in Sources */,
 				AD0EAA7A2AB4D45D006D7F53 /* DominantColors.swift in Sources */,
 				AD60AF3C2ABACDAD00FC1B98 /* Lab+ColorDifference.swift in Sources */,
 				AD8D5EFD2AB2D91C0008F94D /* DominantGradientApp.swift in Sources */,
@@ -429,6 +481,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +512,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

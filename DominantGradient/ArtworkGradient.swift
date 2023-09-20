@@ -26,6 +26,10 @@ struct ArtworkGradient: View {
         .onAppear {
             vm.onAppear()
         }
+        .background {
+            ColorfulBackground(colors: vm.colors.map { .init(uiColor: $0.color) })
+                .ignoresSafeArea()
+        }
     }
 }
 

@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-struct ColorFrq: Hashable {
-    let color: UIColor
-    let frequency: Float
-}
-
 class ArtworkGradientViewModel: ObservableObject {
     let images = [
         "radio_01_class_rock", "radio_02_pop", "radio_03_hiphop_new",
@@ -28,7 +23,7 @@ class ArtworkGradientViewModel: ObservableObject {
         }
     }
 
-    @Published var colors: [ColorFrq] = []
+    @Published var colors: [ColorFrequency] = []
 
     var currentImage: String {
         images[currentImageIndex]
@@ -61,7 +56,7 @@ private extension ArtworkGradientViewModel {
     func updateColors() {
         guard let dominantColors = UIImage(named: currentImage)?
             .dominantColorFrequencies(with: .high) else { return }
-        colors = dominantColors.map { .init(color: $0.color, frequency: Float($0.frequency)) }
+        colors = dominantColors
     }
 }
 

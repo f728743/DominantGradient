@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MulticolorGradient: View {
+struct MulticolorGradient: View, Animatable {
     var points: ColorSpots
     var bias: Float
     var power: Float

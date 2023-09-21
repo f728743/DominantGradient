@@ -10,16 +10,10 @@ import SwiftUI
 struct ColorfulBackground: View {
     static let animationDuration: Double = 5
 
-    var points: [ColorSpot]
+    @Binding var points: [ColorSpot]
     let timer = Timer
-        .publish(every: ColorfulBackground.animationDuration * 0.8, on: .main, in: .common)
+        .publish(every: ColorfulBackground.animationDuration * 0.9, on: .main, in: .common)
         .autoconnect()
-
-    init(colors: [Color]) {
-        points = colors.isEmpty
-        ? [.random(withColor: .red), .random(withColor: .blue)]
-        : colors.map { .random(withColor: $0) }
-    }
 
     var body: some View {
         MulticolorGradient(
@@ -33,13 +27,13 @@ struct ColorfulBackground: View {
     }
 
     func animate() {
-//        withAnimation(.easeInOut(duration: ColorfulBackground.animationDuration)) {
-//            points = points.map { .random(withColor: $0.color) }
-//        }
+        withAnimation(.easeInOut(duration: ColorfulBackground.animationDuration)) {
+            points = points.map { .random(withColor: $0.color) }
+        }
     }
 }
 
-private extension ColorSpot {
+extension ColorSpot {
     static func random(withColor color: Color) -> ColorSpot {
         .init(
             position: .init(x: CGFloat.random(in: 0 ..< 1), y: CGFloat.random(in: 0 ..< 1)),
@@ -49,5 +43,9 @@ private extension ColorSpot {
 }
 
 #Preview {
-    ColorfulBackground(colors: [.pink, .indigo, .cyan]).ignoresSafeArea()
+    ColorfulBackground(
+        points: .constant(
+            [.pink, .indigo, .cyan].map { .random(withColor: $0) }
+        )
+    ).ignoresSafeArea()
 }

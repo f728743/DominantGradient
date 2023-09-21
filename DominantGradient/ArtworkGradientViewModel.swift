@@ -24,6 +24,7 @@ class ArtworkGradientViewModel: ObservableObject {
     }
 
     @Published var colors: [ColorFrequency] = []
+    @Published var points: [ColorSpot] = []
 
     var currentImage: String {
         images[currentImageIndex]
@@ -57,6 +58,9 @@ private extension ArtworkGradientViewModel {
         guard let dominantColors = UIImage(named: currentImage)?
             .dominantColorFrequencies(with: .high) else { return }
         colors = dominantColors
+        withAnimation {
+            points = dominantColors.map { .random(withColor: Color($0.color)) }
+        }
     }
 }
 

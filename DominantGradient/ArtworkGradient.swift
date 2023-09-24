@@ -27,8 +27,8 @@ struct ArtworkGradient: View {
             vm.onAppear()
         }
         .background {
-            ColorfulBackground(points: $vm.points)
-                .overlay(VisualEffect(style: .systemMaterialDark, intensity: 0.8))
+            ColorfulBackground(colors: vm.colors.map { Color($0.color) })
+                .overlay(Color(UIColor(white: 0.4, alpha: 0.5)))
                 .ignoresSafeArea()
         }
     }

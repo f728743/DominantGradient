@@ -8,44 +8,22 @@
 import SwiftUI
 
 struct ColorfulBackground: View {
-    static let animationDuration: Double = 5
-
-    @Binding var points: [ColorSpot]
-    let timer = Timer
-        .publish(every: ColorfulBackground.animationDuration * 0.9, on: .main, in: .common)
-        .autoconnect()
+    @StateObject var vm = ColorfulBackgroundViewModel()
+    let colors: [Color]
 
     var body: some View {
-        MulticolorGradient(
-            points: points,
-            bias: 0.05,
-            power: 2.5,
-            noise: 2
-        )
-        .onReceive(timer) { _ in animate() }
-        .onAppear { animate() }
-    }
-
-    func animate() {
-        withAnimation(.easeInOut(duration: ColorfulBackground.animationDuration)) {
-            points = points.map { .random(withColor: $0.color) }
+        MulticolorGradient(points: vm.points, bias: 0.05, power: 2.5, noise: 2)
+        .onAppear {
+            vm.set(colors)
+            vm.onAppear()
+        }
+        .onChange(of: colors) {
+            vm.set(colors)
         }
     }
 }
 
-extension ColorSpot {
-    static func random(withColor color: Color) -> ColorSpot {
-        .init(
-            position: .init(x: CGFloat.random(in: 0 ..< 1), y: CGFloat.random(in: 0 ..< 1)),
-            color: color
-        )
-    }
-}
-
 #Preview {
-    ColorfulBackground(
-        points: .constant(
-            [.pink, .indigo, .cyan].map { .random(withColor: $0) }
-        )
-    ).ignoresSafeArea()
+    ColorfulBackground(colors: [.pink, .indigo, .cyan])
+        .ignoresSafeArea()
 }

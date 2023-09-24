@@ -11,13 +11,12 @@
 		AD0EAA8B2AB4D6BC006D7F53 /* Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0EAA8A2AB4D6BC006D7F53 /* Lab.swift */; };
 		AD0EAA8D2AB4D6E1006D7F53 /* XYZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0EAA8C2AB4D6E1006D7F53 /* XYZ.swift */; };
 		AD288AD22ABB187A00167FB5 /* MulticolorGradientShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = AD288AD12ABB187A00167FB5 /* MulticolorGradientShader.metal */; };
-		AD288AD52ABB18BE00167FB5 /* MulticolorGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD288AD32ABB18BE00167FB5 /* MulticolorGradientView.swift */; };
 		AD288AD62ABB18BE00167FB5 /* MulticolorGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD288AD42ABB18BE00167FB5 /* MulticolorGradient.swift */; };
 		AD288ADD2ABB193C00167FB5 /* GradientParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD288ADA2ABB193C00167FB5 /* GradientParams.swift */; };
 		AD288ADE2ABB193C00167FB5 /* ColorStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD288ADB2ABB193C00167FB5 /* ColorStop.swift */; };
 		AD288ADF2ABB193C00167FB5 /* Uniforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD288ADC2ABB193C00167FB5 /* Uniforms.swift */; };
 		AD288AE12ABB1AE000167FB5 /* ColorfulBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD288AE02ABB1AE000167FB5 /* ColorfulBackground.swift */; };
-		AD288AE32ABB3D5200167FB5 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD288AE22ABB3D5200167FB5 /* BlurView.swift */; };
+		AD4970D32AC053CE00E7B13A /* ColorfulBackgroundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4970D22AC053CE00E7B13A /* ColorfulBackgroundViewModel.swift */; };
 		AD60AF3C2ABACDAD00FC1B98 /* Lab+ColorDifference.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60AF3B2ABACDAD00FC1B98 /* Lab+ColorDifference.swift */; };
 		AD8D5EFD2AB2D91C0008F94D /* DominantGradientApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8D5EFC2AB2D91C0008F94D /* DominantGradientApp.swift */; };
 		AD8D5EFF2AB2D91C0008F94D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8D5EFE2AB2D91C0008F94D /* ContentView.swift */; };
@@ -46,13 +45,12 @@
 		AD0EAA8A2AB4D6BC006D7F53 /* Lab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lab.swift; sourceTree = "<group>"; };
 		AD0EAA8C2AB4D6E1006D7F53 /* XYZ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XYZ.swift; sourceTree = "<group>"; };
 		AD288AD12ABB187A00167FB5 /* MulticolorGradientShader.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MulticolorGradientShader.metal; sourceTree = "<group>"; };
-		AD288AD32ABB18BE00167FB5 /* MulticolorGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticolorGradientView.swift; sourceTree = "<group>"; };
 		AD288AD42ABB18BE00167FB5 /* MulticolorGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticolorGradient.swift; sourceTree = "<group>"; };
 		AD288ADA2ABB193C00167FB5 /* GradientParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientParams.swift; sourceTree = "<group>"; };
 		AD288ADB2ABB193C00167FB5 /* ColorStop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorStop.swift; sourceTree = "<group>"; };
 		AD288ADC2ABB193C00167FB5 /* Uniforms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uniforms.swift; sourceTree = "<group>"; };
 		AD288AE02ABB1AE000167FB5 /* ColorfulBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulBackground.swift; sourceTree = "<group>"; };
-		AD288AE22ABB3D5200167FB5 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		AD4970D22AC053CE00E7B13A /* ColorfulBackgroundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulBackgroundViewModel.swift; sourceTree = "<group>"; };
 		AD60AF3B2ABACDAD00FC1B98 /* Lab+ColorDifference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lab+ColorDifference.swift"; sourceTree = "<group>"; };
 		AD8D5EF92AB2D91C0008F94D /* DominantGradient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DominantGradient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD8D5EFC2AB2D91C0008F94D /* DominantGradientApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DominantGradientApp.swift; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 				AD288AD92ABB190C00167FB5 /* Model */,
 				AD288AD02ABB183A00167FB5 /* Shaders */,
 				AD288AD42ABB18BE00167FB5 /* MulticolorGradient.swift */,
-				AD288AD32ABB18BE00167FB5 /* MulticolorGradientView.swift */,
 			);
 			path = AnimatedGradient;
 			sourceTree = "<group>";
@@ -160,8 +157,8 @@
 				AD0EAA782AB4D447006D7F53 /* DominantColors */,
 				AD8D5F0A2AB2DC870008F94D /* ArtworkGradient.swift */,
 				AD8D5F0C2AB2DD7A0008F94D /* ArtworkGradientViewModel.swift */,
-				AD288AE22ABB3D5200167FB5 /* BlurView.swift */,
 				AD288AE02ABB1AE000167FB5 /* ColorfulBackground.swift */,
+				AD4970D22AC053CE00E7B13A /* ColorfulBackgroundViewModel.swift */,
 				AD8D5EFE2AB2D91C0008F94D /* ContentView.swift */,
 				AD8D5EFC2AB2D91C0008F94D /* DominantGradientApp.swift */,
 				AD8D5F002AB2D91D0008F94D /* Assets.xcassets */,
@@ -314,12 +311,11 @@
 				AD288AD22ABB187A00167FB5 /* MulticolorGradientShader.metal in Sources */,
 				AD288ADD2ABB193C00167FB5 /* GradientParams.swift in Sources */,
 				ADC266E02ABA182700BCFAD6 /* UIColor+Extensions.swift in Sources */,
-				AD288AE32ABB3D5200167FB5 /* BlurView.swift in Sources */,
 				AD288ADE2ABB193C00167FB5 /* ColorStop.swift in Sources */,
 				AD0EAA8D2AB4D6E1006D7F53 /* XYZ.swift in Sources */,
 				ADCA06602AB82DBA0042A1D4 /* UIImage+Extensions.swift in Sources */,
+				AD4970D32AC053CE00E7B13A /* ColorfulBackgroundViewModel.swift in Sources */,
 				AD0EAA8B2AB4D6BC006D7F53 /* Lab.swift in Sources */,
-				AD288AD52ABB18BE00167FB5 /* MulticolorGradientView.swift in Sources */,
 				AD8D5F0D2AB2DD7A0008F94D /* ArtworkGradientViewModel.swift in Sources */,
 				AD288AE12ABB1AE000167FB5 /* ColorfulBackground.swift in Sources */,
 				AD8D5EFF2AB2D91C0008F94D /* ContentView.swift in Sources */,

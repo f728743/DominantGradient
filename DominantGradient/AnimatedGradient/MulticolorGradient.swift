@@ -9,15 +9,12 @@ import SwiftUI
 
 struct MulticolorGradient: View, Animatable {
     var points: ColorSpots
-    var bias: Float
-    var power: Float
-    var noise: Float
+    var bias: Float  = 0.001
+    var power: Float = 2
+    var noise: Float = 2
 
-    init(points: ColorSpots, bias: Float = 0.001, power: Float = 2, noise: Float = 2) {
-        self.points = points
-        self.bias = bias
-        self.power = power
-        self.noise = noise
+    var uniforms: Uniforms {
+        .init(params: .init(spots: points, bias: bias, power: power, noise: noise))
     }
 
     var animatableData: ColorSpots.AnimatableData {
@@ -30,36 +27,25 @@ struct MulticolorGradient: View, Animatable {
     }
 
     var body: some View {
-        WrapedMulticolorGradient(points: points, bias: bias, power: power, noise: noise)
+        Rectangle()
+            .colorEffect(ShaderLibrary.gradient(.boundingRect, .uniforms(uniforms)))
     }
 }
 
-private struct WrapedMulticolorGradient: UIViewRepresentable {
-    let points: ColorSpots
-    let bias: Float
-    let power: Float
-    let noise: Float
-
-    func makeUIView(context _: Context) -> MulticolorGradientView {
-        let view = MulticolorGradientView()
-        view.update(with: .init(spots: points, bias: bias, power: power, noise: noise))
-        return view
-    }
-
-    func updateUIView(_ view: MulticolorGradientView, context _: Context) {
-        view.update(with: .init(spots: points, bias: bias, power: power, noise: noise))
+extension Shader.Argument {
+    static func uniforms(_ param: Uniforms) -> Shader.Argument {
+        var copy = param
+        return .data(Data(bytes: &copy, count: MemoryLayout<Uniforms>.stride))
     }
 }
 
-struct AnimatedGradientView_Previews: PreviewProvider {
-    static var previews: some View {
-        MulticolorGradient(
-            points: [
-                .init(position: .top, color: .pink),
-                .init(position: .leading, color: .indigo),
-                .init(position: .bottomTrailing, color: .cyan)
-            ]
-        )
-        .ignoresSafeArea()
-    }
+#Preview {
+    MulticolorGradient(
+        points: [
+            .init(position: .top, color: .pink),
+            .init(position: .leading, color: .indigo),
+            .init(position: .bottomTrailing, color: .cyan)
+        ]
+    )
+    .ignoresSafeArea()
 }

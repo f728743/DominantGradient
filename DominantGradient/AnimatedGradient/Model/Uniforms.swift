@@ -24,39 +24,39 @@ struct Uniforms {
     let point6: simd_float2
     let point7: simd_float2
 
-    let color0: simd_float3
-    let color1: simd_float3
-    let color2: simd_float3
-    let color3: simd_float3
-    let color4: simd_float3
-    let color5: simd_float3
-    let color6: simd_float3
-    let color7: simd_float3
+    let color0: simd_float4
+    let color1: simd_float4
+    let color2: simd_float4
+    let color3: simd_float4
+    let color4: simd_float4
+    let color5: simd_float4
+    let color6: simd_float4
+    let color7: simd_float4
 }
 
 extension Uniforms {
     init(params: GradientParams) {
         self.init(
-            pointCount: simd_int1(params.spots.count),
+            pointCount: 8,
             bias: params.bias,
             power: params.power,
             noise: params.noise,
-            point0: params.spots[safe: 0]?.position.simd ?? .zero,
-            point1: params.spots[safe: 1]?.position.simd ?? .zero,
-            point2: params.spots[safe: 2]?.position.simd ?? .zero,
-            point3: params.spots[safe: 3]?.position.simd ?? .zero,
-            point4: params.spots[safe: 4]?.position.simd ?? .zero,
-            point5: params.spots[safe: 5]?.position.simd ?? .zero,
-            point6: params.spots[safe: 6]?.position.simd ?? .zero,
-            point7: params.spots[safe: 7]?.position.simd ?? .zero,
-            color0: params.spots[safe: 0]?.color.simd ?? .zero,
-            color1: params.spots[safe: 1]?.color.simd ?? .zero,
-            color2: params.spots[safe: 2]?.color.simd ?? .zero,
-            color3: params.spots[safe: 3]?.color.simd ?? .zero,
-            color4: params.spots[safe: 4]?.color.simd ?? .zero,
-            color5: params.spots[safe: 5]?.color.simd ?? .zero,
-            color6: params.spots[safe: 6]?.color.simd ?? .zero,
-            color7: params.spots[safe: 7]?.color.simd ?? .zero
+            point0: params.points.point0.position.simd,
+            point1: params.points.point1.position.simd,
+            point2: params.points.point2.position.simd,
+            point3: params.points.point3.position.simd,
+            point4: params.points.point4.position.simd,
+            point5: params.points.point5.position.simd,
+            point6: params.points.point6.position.simd,
+            point7: params.points.point7.position.simd,
+            color0: params.points.point0.color.simd,
+            color1: params.points.point1.color.simd,
+            color2: params.points.point2.color.simd,
+            color3: params.points.point3.color.simd,
+            color4: params.points.point4.color.simd,
+            color5: params.points.point5.color.simd,
+            color6: params.points.point6.color.simd,
+            color7: params.points.point7.color.simd
         )
     }
 }
@@ -66,17 +66,12 @@ extension UnitPoint {
 }
 
 extension Color {
-    var simd: simd_float3 {
+    var simd: simd_float4 {
         var red: CGFloat = 0
         var green: CGFloat = 0
         var blue: CGFloat = 0
-        UIColor(self).getRed(&red, green: &green, blue: &blue, alpha: nil)
-        return simd_float3(Float(red), Float(green), Float(blue))
-    }
-}
-
-extension Collection {
-    subscript(safe index: Index) -> Element? {
-        return indices.contains(index) ? self[index] : nil
+        var alpha: CGFloat = 0
+        UIColor(self).getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        return simd_float4(Float(red), Float(green), Float(blue), Float(alpha))
     }
 }

@@ -8,21 +8,20 @@
 import SwiftUI
 
 struct MulticolorGradient: View, Animatable {
-    var points: ColorSpots
-    var bias: Float  = 0.001
-    var power: Float = 2
-    var noise: Float = 2
+    var points: ColorPoints
+    var animationUpdateHandler: ((ColorPoints) -> Void)?
 
     var uniforms: Uniforms {
-        .init(params: .init(spots: points, bias: bias, power: power, noise: noise))
+        .init(params: .init(points: points, bias: 0.05, power: 2.5, noise: 2))
     }
 
-    var animatableData: ColorSpots.AnimatableData {
+    var animatableData: ColorPoints.AnimatableData {
         get {
             points.animatableData
         }
         set {
             points = .init(newValue)
+            animationUpdateHandler?(points)
         }
     }
 
@@ -41,11 +40,13 @@ extension Shader.Argument {
 
 #Preview {
     MulticolorGradient(
-        points: [
-            .init(position: .top, color: .pink),
-            .init(position: .leading, color: .indigo),
-            .init(position: .bottomTrailing, color: .cyan)
-        ]
+        points: .init(
+            points: [
+                .init(position: .top, color: .pink),
+                .init(position: .leading, color: .indigo),
+                .init(position: .bottomTrailing, color: .cyan)
+            ]
+        )
     )
     .ignoresSafeArea()
 }

@@ -12,7 +12,10 @@ struct ColorfulBackground: View {
     let colors: [Color]
 
     var body: some View {
-        MulticolorGradient(points: vm.points, bias: 0.05, power: 2.5, noise: 2)
+        MulticolorGradient(
+            points: vm.points,
+            animationUpdateHandler: vm.onUpdate(animatedData:)
+        )
         .onAppear {
             vm.set(colors)
             vm.onAppear()

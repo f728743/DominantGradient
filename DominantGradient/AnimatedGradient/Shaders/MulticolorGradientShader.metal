@@ -14,7 +14,7 @@ typedef struct {
     float power;
     float noise;
     float2 points[8];
-    float3 colors[8];
+    float4 colors[8];
 } Uniforms;
 
 float2 hash23(float3 p3) {
@@ -43,7 +43,7 @@ float2 hash23(float3 p3) {
         float2 pos = uniforms.points[i] * float2(1.0, float(size.y) / float(size.x));
         pos = uv - pos;
         float dist = length(pos);
-        float c = 1.0 / (uniforms.bias + pow(dist, uniforms.power));
+        float c = 1.0 / (uniforms.bias + pow(dist, uniforms.power)) * uniforms.colors[i].a ;
         contribution[i] = c;
         totalContribution += c;
     }
@@ -52,7 +52,7 @@ float2 hash23(float3 p3) {
     float3 col = float3(0, 0, 0);
     float inverseContribution = 1.0 / totalContribution;
     for (int i = 0; i < uniforms.pointCount; i++) {
-        col += contribution[i] * inverseContribution * uniforms.colors[i];
+        col += contribution[i] * inverseContribution * uniforms.colors[i].rgb;
     }
     return half4(half3(col), 1.0);
 }

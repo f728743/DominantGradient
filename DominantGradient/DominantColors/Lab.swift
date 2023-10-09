@@ -7,7 +7,7 @@
 
 import UIKit
 
-public struct Lab {
+struct Lab {
     let l: CGFloat
     let a: CGFloat
     let b: CGFloat

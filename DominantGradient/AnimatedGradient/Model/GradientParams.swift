@@ -6,8 +6,8 @@
 //
 
 struct GradientParams {
-    var spots: ColorSpots = []
-    var bias: Float = 0.001
-    var power: Float = 2
-    var noise: Float = 2.0
+    let points: ColorPoints
+    let bias: Float
+    let power: Float
+    let noise: Float
 }

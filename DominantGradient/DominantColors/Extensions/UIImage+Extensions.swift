@@ -45,7 +45,7 @@ extension UIImage {
     }
 }
 
-public extension CGBitmapInfo {
+extension CGBitmapInfo {
     enum ComponentLayout {
         case bgra
         case abgr
